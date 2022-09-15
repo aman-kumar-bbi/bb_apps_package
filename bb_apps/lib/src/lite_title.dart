@@ -1,10 +1,8 @@
- part of bb_apps;
-
-
+part of bb_apps;
 
 class CustomListTile extends StatelessWidget {
   final List appData;
-  const CustomListTile({super.key, required this.appData});
+  const CustomListTile({required this.appData});
   @override
   Widget build(BuildContext context) {
     List specificRegionList = [];
@@ -27,9 +25,8 @@ class CustomListTile extends StatelessWidget {
                               openPlayStore(specificRegionList[index]
                                   ["platform"][0]["url"]);
                             } else if (Platform.isIOS) {
-                              openAppStore(specificRegionList[index]
-                                  ["platform"][1]["url"]);
-                             
+                              openAppStore(specificRegionList[index]["platform"]
+                                  [1]["url"]);
                             }
                           },
                           child: Container(

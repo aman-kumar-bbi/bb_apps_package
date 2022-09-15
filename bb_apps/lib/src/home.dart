@@ -1,13 +1,10 @@
- part of bb_apps;
-
+part of bb_apps;
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
-
     FirebaseFunctions().fetchData();
 
     return Scaffold(
@@ -19,7 +16,7 @@ class Home extends StatelessWidget {
             future: FirebaseFunctions().fetchData(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                List? accualData = snapshot.data;
+                List? accualData = snapshot.data as List?;
                 return CustomListTile(
                   appData: accualData ?? [],
                 );

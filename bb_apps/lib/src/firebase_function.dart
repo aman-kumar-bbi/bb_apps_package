@@ -1,6 +1,4 @@
- part of bb_apps;
-
-
+part of bb_apps;
 
 class FirebaseFunctions {
   List appDataInMap = [];
@@ -11,8 +9,6 @@ class FirebaseFunctions {
 
     Map bbAppJson = event.snapshot.value as Map<dynamic, dynamic>;
     appDataInMap = bbAppJson.values.toList();
-    
-    List<AppDetails> listOfAppDetails;
 
     return appDataInMap;
   }

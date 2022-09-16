@@ -2,7 +2,7 @@ part of bb_apps;
 
 class CustomListTile extends StatelessWidget {
   final List appData;
-  const CustomListTile({required this.appData});
+   const CustomListTile({required this.appData});
   @override
   Widget build(BuildContext context) {
     List specificRegionList = [];

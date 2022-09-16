@@ -2,7 +2,8 @@ part of bb_apps;
 
 class CustomListTile extends StatelessWidget {
   final List appData;
-   const CustomListTile({required this.appData});
+  // ignore: use_key_in_widget_constructors
+  const CustomListTile({required this.appData});
   @override
   Widget build(BuildContext context) {
     List specificRegionList = [];
@@ -23,10 +24,10 @@ class CustomListTile extends StatelessWidget {
                           onTap: () {
                             if (Platform.isAndroid) {
                               openPlayStore(specificRegionList[index]
-                                  ["platform"][0]["url"]);
+                                  ["platform"][0]["url"] as String);
                             } else if (Platform.isIOS) {
                               openAppStore(specificRegionList[index]["platform"]
-                                  [1]["url"]);
+                                  [1]["url"] as String);
                             }
                           },
                           child: Container(
@@ -42,7 +43,8 @@ class CustomListTile extends StatelessWidget {
                                   Row(
                                     children: [
                                       Text(
-                                        specificRegionList[index]["appName"],
+                                        specificRegionList[index]["appName"]
+                                            as String,
                                         style: const TextStyle(
                                             fontSize: 17,
                                             fontWeight: FontWeight.w600),
@@ -53,7 +55,7 @@ class CustomListTile extends StatelessWidget {
                                     children: [
                                       Text(
                                         specificRegionList[index]
-                                            ["publisherName"],
+                                            ["publisherName"] as String,
                                         style: const TextStyle(
                                             fontWeight: FontWeight.w600),
                                       )

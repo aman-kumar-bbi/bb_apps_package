@@ -1,5 +1,5 @@
- part of bb_apps;
- 
+part of bb_apps;
+
 List filterData(List wholeDataOfApp, String userCountry) {
   List finalListAccordingCountry = [];
   List finalGermanList = [];
@@ -25,15 +25,13 @@ List filterData(List wholeDataOfApp, String userCountry) {
 
     case "United States":
       {
-        finalListAccordingCountry =
-            finalAmericanList + finalEuropeanList;
+        finalListAccordingCountry = finalAmericanList + finalEuropeanList;
       }
       break;
 
     case "Canada":
       {
-        finalListAccordingCountry =
-            finalAmericanList + finalEuropeanList;
+        finalListAccordingCountry = finalAmericanList + finalEuropeanList;
       }
       break;
 
@@ -46,8 +44,7 @@ List filterData(List wholeDataOfApp, String userCountry) {
 
     case "France":
       {
-        finalListAccordingCountry =
-            finalEuropeanList  + finalAmericanList;
+        finalListAccordingCountry = finalEuropeanList + finalAmericanList;
       }
       break;
 

@@ -20,7 +20,7 @@ void openPlayStore(String urla) async {
 
 void openAppStore(String id) async {
   final url =
-      Uri.parse(" https://apps.apple.com/in/story/id$id?itscg=10000&itsct=");
+      Uri.parse("https://apps.apple.com/in/story/id$id?itscg=10000&itsct=");
   if (await canLaunchUrl(url)) {
     await launchUrl(url, mode: LaunchMode.externalApplication);
   } else {

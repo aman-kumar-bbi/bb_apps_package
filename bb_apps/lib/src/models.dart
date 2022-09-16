@@ -1,6 +1,4 @@
- part of bb_apps;
-
-
+part of bb_apps;
 
 class AppDetails {
   String uid;
@@ -15,19 +13,16 @@ class AppDetails {
     required this.appName,
     required this.publisherName,
     required this.region,
-
     required this.platform,
   });
 
-    AppDetails.fromJson(this.uid, Map<String, dynamic> json)
-      : appName = json['appName'],
-        publisherName = json['publisherName'],
-        region = json['region'],
-
+  AppDetails.fromJson(this.uid, Map<String, dynamic> json)
+      : appName = json['appName'] as String,
+        publisherName = json['publisherName'] as String,
+        region = json['region'] as String,
         platform = (json['platform'] as List)
-            .map((e) => BBPlatform.fromJson(e))
+            .map((e) => BBPlatform.fromJson(e as Map<String, dynamic>))
             .toList();
-
 }
 
 class BBPlatform {
@@ -36,7 +31,8 @@ class BBPlatform {
   BBPlatform({required this.operatingSystem, required this.url});
 
   BBPlatform.fromJson(Map<String, dynamic> json)
-      : operatingSystem = json["operatingSystem"],
-      url=json["url"];
-  Map<String, dynamic> toJson() => {"operatingSystem": operatingSystem,"url":url};
+      : operatingSystem = json["operatingSystem"] as String,
+        url = json["url"] as String;
+  Map<String, dynamic> toJson() =>
+      {"operatingSystem": operatingSystem, "url": url};
 }
